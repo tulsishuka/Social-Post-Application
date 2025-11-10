@@ -13,79 +13,42 @@ export default function PostCard({ post, onLike, onOpenComments, currentUserId }
   const handleLikeClick = async () => {
     setLiked(!liked);
     setLikeCount(liked ? likeCount - 1 : likeCount + 1);
-    onLike(post._id); // backend call from parent
+    onLike(post._id); 
   };
 
   return (
-    <Card
-      sx={{
-        mb: 3,
-        borderRadius: 3,
-        boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
-        transition: "transform 0.2s ease",
-        "&:hover": { transform: "scale(1.01)" },
-      }}
-    >
-      <CardContent>
-        {/* Header */}
+    <Card sx={{ mb: 3, borderRadius: 3, boxShadow: "0 3px 10px rgba(0,0,0,0.1)", transition: "transform 0.2s ease", "&:hover": { transform: "scale(1.01)" },}}>
+      <CardContent>  
         <Box display="flex" alignItems="center" justifyContent="space-between" mb={1}>
           <Box display="flex" alignItems="center" gap={1}>
-            <Avatar sx={{ bgcolor: "primary.main", width: 36, height: 36 }}>
-              {post.username?.[0]?.toUpperCase() || "U"}
-            </Avatar>
+            <Avatar sx={{ bgcolor: "primary.main", width: 36, height: 36 }}>{post.username?.[0]?.toUpperCase() || "U"}</Avatar>
             <Box>
-              <Typography variant="subtitle1" fontWeight={700}>
-                {post.username ?? "Unknown"}
-              </Typography>
-              <Typography variant="caption" color="text.secondary">
-                {new Date(post.createdAt).toLocaleString()}
-              </Typography>
+              <Typography variant="subtitle1" fontWeight={700}>{post.username ?? "Unknown"}</Typography>
+              <Typography variant="caption" color="text.secondary">{new Date(post.createdAt).toLocaleString()}</Typography>
             </Box>
           </Box>
         </Box>
-
-        {/* Post Content */}
         {post.text && (
           <Typography sx={{ mt: 1.5, mb: 1.5, fontSize: "0.95rem" }}>{post.text}</Typography>
         )}
         {post.imageUrl && (
           <Box sx={{ mt: 1, mb: 1 }}>
-            <img
-              src={`https://social-post-application-backend.onrender.com/uploads/${post.imageUrl}`}
-              alt="post"
-              style={{ width: "100%", borderRadius: 10 }}
-            />
-          </Box>
-        )}
-
-        {/* Actions */}
+            <img src={`https://social-post-application-backend.onrender.com/uploads/${post.imageUrl}`} alt="post" style={{ width: "100%", borderRadius: 10 }}/>
+          </Box>)}
         <Box display="flex" alignItems="center" justifyContent="space-between" mt={1.5}>
           <Box display="flex" alignItems="center">
             <IconButton onClick={handleLikeClick}>
               {liked ? (
-                <FavoriteIcon
-                  sx={{
-                    color: "red",
-                    transition: "transform 0.2s ease",
-                    transform: liked ? "scale(1.2)" : "scale(1)",
-                  }}
-                />
+                <FavoriteIcon sx={{ color: "red", transition: "transform 0.2s ease",transform: liked ? "scale(1.2)" : "scale(1)",}}/>
               ) : (
                 <FavoriteBorderIcon />
               )}
             </IconButton>
-            <Typography component="span" variant="body2" sx={{ mr: 2 }}>
-              {likeCount}
-            </Typography>
+            <Typography component="span" variant="body2" sx={{ mr: 2 }}>{likeCount}</Typography>
 
-            <IconButton onClick={() => onOpenComments(post._id)}>
-              <ChatBubbleOutlineIcon />
-            </IconButton>
-            <Typography component="span" variant="body2">
-              {post.comments?.length ?? 0}
-            </Typography>
+            <IconButton onClick={() => onOpenComments(post._id)}><ChatBubbleOutlineIcon /></IconButton>
+            <Typography component="span" variant="body2">{post.comments?.length ?? 0}</Typography>
           </Box>
-
           <IconButton>
             <ShareIcon />
           </IconButton>
