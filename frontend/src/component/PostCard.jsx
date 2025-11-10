@@ -51,7 +51,7 @@ export default function PostCard({ post, onLike, onOpenComments, currentUserId }
         {post.imageUrl && (
           <Box sx={{ mt: 1, mb: 1 }}>
             <img
-              src={`http://localhost:5000/uploads/${post.imageUrl}`}
+              src={`https://social-post-application-backend.onrender.com/uploads/${post.imageUrl}`}
               alt="post"
               style={{ width: "100%", borderRadius: 10 }}
             />
