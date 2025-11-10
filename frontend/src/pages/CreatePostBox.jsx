@@ -28,34 +28,12 @@ export default function CreatePostBox({ onPosted }) {
 
   return (
  
-     <Card
-      sx={{
-        mb: 3,
-        borderRadius: "16px",
-        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-        background: "linear-gradient(145deg, #e1dcdcff, #ffffffff)",
-        p: 2,
-      }}
-    >
+     <Card sx={{ mb: 3, borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.08)", background: "linear-gradient(145deg, #e1dcdcff, #ffffffff)",p: 2,}}>
       <CardContent>
-        <Box display="flex" alignItems="center" mb={2}>
-          <Typography variant="h6" sx={{ fontWeight: 600, color: "#333" }}>
-            Create Post
-          </Typography>
-        </Box>
+        <Box display="flex" alignItems="center" mb={2}><Typography variant="h6" sx={{ fontWeight: 600, color: "#333" }}>Create Post</Typography></Box>
 
-        <TextField
-          fullWidth
-          multiline
-          rows={3}
-          placeholder="What's on your mind?"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          variant="outlined"
-          sx={{
-            backgroundColor: "#e1dcdcff",
-            borderRadius: "10px",
-            "& .MuiOutlinedInput-root": {
+        <TextField fullWidth multiline rows={3} placeholder="What's on your mind?" value={text} onChange={(e) => setText(e.target.value)} variant="outlined"
+          sx={{ backgroundColor: "#e1dcdcff", borderRadius: "10px", "& .MuiOutlinedInput-root": {
               "& fieldset": { borderColor: "#d8cfcfff" },
               "&:hover fieldset": { borderColor: "#808080ff" },
               "&.Mui-focused fieldset": { borderColor: "#696969ff" },
@@ -63,47 +41,13 @@ export default function CreatePostBox({ onPosted }) {
           }}
         />
 
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          mt={2}
-        >
-          <Button
-            component="label" variant="outlined"sx={{ 
-              color: "#8b8b8bff",
-              textTransform: "none",
-              borderRadius: "10px",
-              px: 2,
-              "&:hover": {
-                             background: "linear-gradient(45deg, #c5c5c5ff, #cccccdff)",
+        <Box display="flex" alignItems="center" justifyContent="space-between" mt={2} >
+          <Button component="label" variant="outlined"sx={{  color: "#8b8b8bff", textTransform: "none", borderRadius: "10px", px: 2, "&:hover": { 
+       background: "linear-gradient(45deg, #c5c5c5ff, #cccccdff)",
+},}}startIcon={<AddPhotoAlternateIcon />}>Photo
+            <input type="file" accept="image/*" hidden onChange={(e) => setImage(e.target.files[0])}/></Button>
 
-                },}}startIcon={<AddPhotoAlternateIcon />}
-           >Photo
-            <input
-              type="file"
-              accept="image/*"
-              hidden
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-          </Button>
-
-          <Button
-            variant="contained"
-            sx={{
-              background: "linear-gradient(45deg, #c5c5c5ff, #cccccdff)",
-              color: "#fff",
-              textTransform: "none",
-              px: 3,
-              py: 1,
-              borderRadius: "10px",
-              fontWeight: 600,
-              boxShadow: "0 3px 8px rgba(55,202,45,0.3)",
-             
-            }}
-            onClick={handlePost}
-            disabled={loading}
-          >
+          <Button variant="contained" sx={{ background: "linear-gradient(45deg, #c5c5c5ff, #cccccdff)",color: "#fff", textTransform: "none", px: 3,py: 1, borderRadius: "10px",fontWeight: 600,boxShadow: "0 3px 8px rgba(55,202,45,0.3)",}}onClick={handlePost} disabled={loading}>
             {loading ? "Posting..." : "Post"}
           </Button>
         </Box>
