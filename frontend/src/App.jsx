@@ -18,9 +18,9 @@ export default function App() {
 
   return (
     <>
-      <AppBar position="static" sx={{ background: "#868484ff" }}>
+      <AppBar position="static" sx={{ background: "#585858ff" }}>
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>Social Post Application</Typography>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}> Post Maker</Typography>
           {loggedIn ? (
             <>
               <Button color="inherit" onClick={handleLogout}>Logout</Button>
@@ -31,7 +31,7 @@ export default function App() {
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="md" sx={{ mt: 4 }}>
+      <Container maxWidth="md" >
         <Routes>
           <Route path="/" element={<Signup onLogin={() => { setLoggedIn(true); navigate("/feed"); }} />} />
           <Route path="/signup" element={<Signup onLogin={() => { setLoggedIn(true); navigate("/feed"); }} />} />

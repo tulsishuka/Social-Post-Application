@@ -39,7 +39,6 @@ export default function Signup({ onLogin }) {
       width: "100%",
       maxWidth: 420,
       borderRadius: 4,
-      // boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
       backgroundColor: "white",
     }}
   >
@@ -59,16 +58,14 @@ export default function Signup({ onLogin }) {
           Create Your Account
         </Typography>
 
-        <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%" }}>
-          <TextField
-            label="Username"
-            name="username"
-            value={form.username}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            required
-            variant="outlined"
+        <Box component="form" onSubmit={handleSubmit}
+         sx={{ width: "100%" }}>
+          <TextField label="Username"name="username"
+          value={form.username}
+          onChange={handleChange} 
+           fullWidth 
+          margin="normal"     
+                requiredvariant="outlined"
             sx={{
               "& .MuiOutlinedInput-root": {
                 borderRadius: 2,
@@ -108,30 +105,37 @@ export default function Signup({ onLogin }) {
             }}
           />
 
+        
           <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            disabled={loading}
-            sx={{
-              mt: 3,
-              py: 1.3,
-              fontWeight: 600,
-              borderRadius: 3,
-              textTransform: "none",
-              transition: "0.3s",
-              "&:hover": {
-              },
-            }}
-          >
-            {loading ? "Creating..." : "Sign Up"}
-          </Button>
+  type="submit"
+  variant="contained"
+  fullWidth
+  disabled={loading}
+  sx={{
+    mt: 3,
+    py: 1.3,
+    fontWeight: 600,
+    borderRadius: 3,
+    textTransform: "none",
+    backgroundColor: "#9e9e9e", 
+    color: "white",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+    "&:hover": {
+      backgroundColor: "#7d7d7d",
+    },
+    "&.Mui-disabled": {
+      backgroundColor: "#cfcfcf",
+      color: "#ffffff",
+    },
+  }}
+>
+  {loading ? "Creating..." : "Sign Up"}
+</Button>
 
           <Typography variant="body2" align="center" sx={{ mt: 3 }}>
             Already have an account?{" "}
             <Link to="/login" style={{ color: "#6c6c6cff", fontWeight: 600, textDecoration: "none" }}>
-              Login
-            </Link>
+              Login</Link>
           </Typography>
         </Box>
       </Box>

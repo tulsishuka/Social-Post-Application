@@ -2,18 +2,7 @@ import React, { useEffect, useState } from "react";
 import PostCard from "../component/PostCard";
 import API from "../services/api";
 import CreatePostBox from "./CreatePostBox";
-import {
-  Box,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  TextField,
-  Button,
-  Divider,
-  IconButton,
-} from "@mui/material";
+import { Box,  Typography,  Dialog,  DialogTitle,  DialogContent,  DialogActions,  TextField,  Button,  Divider,  IconButton,} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 export default function Feed() {
   const [posts, setPosts] = useState([]);
@@ -59,24 +48,8 @@ export default function Feed() {
   return (
 
   <Box
-      sx={{
-        background: "linear-gradient(180deg, #d6d3d3ff, #ffffff)",
-        minHeight: "100vh",
-        py: 4,
-        px: { xs: 2, sm: 5, md: 8 },
-        transition: "0.3s",
-      }}
-    >
-      <Box
-        sx={{
-          textAlign: "center",
-         
-          borderRadius: "16px",
-          color: "white",
-        }}
-      >
-       
-      </Box>
+      sx={{background: "linear-gradient(180deg, #d6d3d3ff, #ffffff)",minHeight: "100vh",py: 4,px: { xs: 2, sm: 5, md: 8 },transition: "0.3s",}}>
+      <Box sx={{ textAlign: "center",borderRadius: "16px", color: "white",}}></Box>
 
  
       <Box
