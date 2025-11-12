@@ -8,7 +8,6 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// SIGNUP
 router.post("/signup", async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -31,11 +30,11 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const { username, password } = req.body; // ⬅ change email → username
+    const { username, password } = req.body; 
     if (!username || !password)
       return res.status(400).json({ message: "Provide username and password" });
 
-    const user = await User.findOne({ username }); // ⬅ find by username now
+    const user = await User.findOne({ username }); 
     if (!user) return res.status(400).json({ message: "User not found" });
 
     const ok = await bcrypt.compare(password, user.password);
