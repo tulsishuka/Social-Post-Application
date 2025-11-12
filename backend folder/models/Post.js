@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   username: String,
   text: String,
-  imageUrl: String, // filename saved in /uploads
+  imageUrl: String, 
   likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   comments: [commentSchema]
 }, { timestamps: true });
