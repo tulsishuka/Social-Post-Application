@@ -1,4 +1,3 @@
-// createDemoUser.js
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
