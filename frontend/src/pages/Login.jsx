@@ -1,14 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  TextField,
-  Typography,
-  Avatar,
-} from "@mui/material";
+import {  Box,  Button,  Card,  CardContent,  TextField,  Typography,  Avatar,} from "@mui/material";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { Link } from "react-router-dom";
 
@@ -35,20 +27,10 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <Box
-      sx={{justifyContent: "center", alignItems: "center",p: 2,}}>
-      <Card
-        sx={{display: "flex",flexDirection: { xs: "column", md: "row", padding:3 },         width: "100%",maxWidth: 900,borderRadius: "20px",boxShadow: "0 8px 24px rgba(0,0,0,0.15)",overflow: "hidden",}}>
+    <Box    sx={{justifyContent: "center", alignItems: "center",p: 2,}}>
+      <Card   sx={{display: "flex",flexDirection: { xs: "column", md: "row", padding:3 },         width: "100%",maxWidth: 900,borderRadius: "20px",boxShadow: "0 8px 24px rgba(0,0,0,0.15)",overflow: "hidden",}}>
         <Box sx={{flex: 1,display: { xs: "none", md: "block" },backgroundImage: `url('https://wallpaperaccess.com/full/13756.jpg')`,backgroundSize: "cover",backgroundPosition: "center",}}/><CardContent
-          sx={{
-            flex: 1,
-            p: 5,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            background: "linear-gradient(180deg, #ffffff 0%, #f9fff9 100%)",
-          }}
-        >
+          sx={{       flex: 1,p: 5,display: "flex",flexDirection: "column",justifyContent: "center",background: "linear-gradient(180deg, #ffffff 0%, #f9fff9 100%)",          }}        >
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Avatar
               sx={{
